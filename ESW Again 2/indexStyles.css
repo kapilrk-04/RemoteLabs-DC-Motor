@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Main';
+    src: url('./Font/SIMPLIFICA/SIMPLIFICA/SIMPLIFICA\ Typeface.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Sign';
+    src: url('./Font/TT\ Commons\ Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('./Font/aileron/Aileron-Regular.otf') format('opentype');
+}
+
+html {
+    height: 100%;
+}
+
+.net {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(3, 27, 52);
+    background-image: radial-gradient(farthest-corner at 80% 80%, rgb(20, 20, 205), rgb(154, 10, 200));
+    /*rgb(0, 71, 185), rgb(154, 0, 141)*/
+    /*rgb(42, 53, 119), rgb(0, 11, 23)*/
+    /*rgb(20, 20, 205), rgb(154, 10, 200)*/
+    background-size: cover;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    position: absolute;
+    height: 38%;
+    display: block;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.main_title {
+    color: rgb(0, 0, 0);
+    font-family: Main;
+    font-size: 12.5vw;
+    margin: 0px;
+}
+
+.sign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign_up,
+.sign_in {
+    border: solid;
+    background-color: transparent;
+    border-color: rgb(0, 0, 0);
+    border-radius: 4vw;
+    border-width: 0.23vw;
+    font-size: 2vw;
+    color: rgb(0, 0, 0);
+    padding: 0.8vw;
+    margin: 1vw;
+    font-family: Aileron, Sign;
+}
+
+.sign_in:hover,
+.sign_up:hover {
+    border-color: rgb(117, 117, 117);
+    color: rgb(117, 117, 117);
+}

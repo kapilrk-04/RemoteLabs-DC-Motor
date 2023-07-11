@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url(./assets/bg-01.jpg);
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.action {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    display: flex;
+}
+
+.action .profile {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.action .profile img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.action .menu {
+    position: absolute;
+    top: 120px;
+    right: -10px;
+    padding: 10px 20px;
+    background: #fff;
+    width: 200px;
+    box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.action .menu.active {
+    top: 80px;
+    visibility: visible;
+    opacity: 1;
+}
+
+.action .menu::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: 28px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    transform: rotate(45deg);
+}
+
+.action .menu h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    font-weight: 500;
+    color: #555;
+    line-height: 1.5em;
+}
+
+.action .menu h3 span {
+    font-size: 14px;
+    color: #cecece;
+    font-weight: 300;
+}
+
+.action .menu ul li {
+    list-style: none;
+    padding: 16px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+.action .menu ul li img {
+    max-width: 20px;
+    margin-right: 10px;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.action .menu ul li:hover img {
+    opacity: 1;
+}
+
+.action .menu ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.action .menu ul li:hover a {
+    color: #ff5d94;
+}
+
+@font-face {
+    font-family: 'Main';
+    src: url('./../Font/SIMPLIFICA/SIMPLIFICA/SIMPLIFICA\ Typeface.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Sign';
+    src: url('./../Font/TT\ Commons\ Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('./../Font/aileron/Aileron-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: url('../fonts/poppins/Poppins-Medium.ttf');
+}
+
+#title {
+    padding-top: 20px;
+    padding-left: 30px;
+    font-family: Main;
+    font-size: 3.5vw;
+    font-weight: 900;
+    display: flex;
+    justify-content: space-between;
+    width: 100vh;
+}
+
+.selector {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+
+.content {
+    height: 35%;
+    display: block;
+    padding: 30px 30px 30px 30px;
+    min-width: 48%;
+}
+
+.timerL {
+    font-family: Poppins;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    display: flex;
+}
+
+.time1 {
+    padding-top: 1.3vw;
+    padding-right: 1vh;
+}
+
+.time2 {
+    padding-top: 0.5vw;
+    padding-right: 1vh;
+}
+
+.timer {
+    color: rgb(255, 255, 255);
+    font-size: 2.3vw;
+    padding-right: 10px;
+}
+
+.leave_div {
+    padding-top: 0.25vw;
+    padding-right: 1vh;
+}
+
+.leave {
+    border: solid;
+    background-color: transparent;
+    border-color: rgb(0, 0, 0);
+    border-radius: 4vw;
+    border-width: 0.23vw;
+    font-size: 1.3vw;
+    color: rgb(0, 0, 0);
+    padding: 0.6vw;
+    margin: 1vw;
+    font-family: Aileron, Sign;
+    margin: 0px;
+}
+
+.leave:hover {
+    border-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-minmax {
+    margin-top: 30px;
+    width: 60vh;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    color: #000000;
+}
+
+.box-minmax span:first-child {
+    margin-left: 10px;
+}
+
+.rs-range {
+    margin-top: 29px;
+    width: 60vh;
+    -webkit-appearance: none;
+}
+
+.rs-range:focus {
+    outline: none;
+}
+
+.rs-range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1px;
+    cursor: pointer;
+    box-shadow: none;
+    background: #000000;
+    border-radius: 0px;
+    border: 0px solid #010101;
+}
+
+.rs-range::-moz-range-track {
+    width: 100%;
+    height: 1px;
+    cursor: pointer;
+    box-shadow: none;
+    background: #000000;
+    border-radius: 0px;
+    border: 0px solid #010101;
+}
+
+.rs-range::-webkit-slider-thumb {
+    box-shadow: none;
+    border: 0px solid #000000;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    height: 42px;
+    width: 22px;
+    border-radius: 22px;
+    background: rgb(0, 0, 0);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -20px;
+}
+
+.rs-range::-moz-range-thumb {
+    box-shadow: none;
+    border: 0px solid #000000;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    height: 42px;
+    width: 22px;
+    border-radius: 22px;
+    background: rgb(0, 0, 0);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -20px;
+}
+
+.rs-range::-moz-focus-outer {
+    border: 0;
+}
+
+.rs-label {
+    position: relative;
+    transform-origin: center center;
+    display: flex;
+    width: 5vw;
+    height: 5vw;
+    background: transparent;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 22px;
+    box-sizing: border-box;
+    border: 2px solid rgb(0, 0, 0);
+    margin-top: 20px;
+    margin-left: -1.7vw;
+    left: attr(value);
+    color: rgb(0, 0, 0);
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 2vw;
+    justify-content: center;
+}
+
+.rs-label::after {
+    content: "V";
+    display: block;
+    padding-top: 0.2vw;
+    letter-spacing: 0.07em;
+    margin-top: -2px;
+}
+
+.input-labels {
+    font-family: Aileron;
+    font-size: 2vw;
+}
+
+.output-div {
+    padding-top: 2vw;
+    width: 60vh;
+    display: flex;
+}
+
+.rpm {
+    color: aliceblue;
+    font-family: Aileron;
+    font-size: 3vw;
+}
+
+.space-rpm {
+    padding-top: 0.65vw;
+}
+
+.chart-content {
+    background-color: rgba(240, 248, 255, 0.5);
+    height: 40%;
+    min-width: 40%;
+    padding-top: 2vw;
+    padding-left: 1.5vw;
+    padding-right: 2vw;
+    padding-bottom: 2vw;
+    border-radius: 2vw;
+}
+
+#theory,
+#instructions {
+    border-radius: 4vw;
+    border: solid;
+    font-family: Aileron;
+    font-size: 1.3vw;
+    color: #000000;
+    border-color: #000000;
+    background-color: transparent;
+    margin: 1vw;
+    border-width: 1vw;
+    border: solid;
+    padding: 0.6vw;
+}
+
+#theory:hover,
+#instructions:hover {
+    color: aliceblue;
+    border-color: aliceblue;
+}
+
+.theory_content,
+.instructions_content {
+    position: absolute;
+    width: 60vw;
+    height: 70vh;
+    margin-left: 35vh;
+    font-family: Aileron;
+    font-size: 1.5vw;
+    border-radius: 30px;
+    padding: 2vw;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    overflow: scroll;
+}
+
+#cam {
+    padding-left: 35%;
+}

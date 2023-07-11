@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Remote Labs - Experiments</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+    <link href="./expStyle.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="title">REMOTE LABS</div>
+    <div class="action">
+        <div class="profile" onclick="menuToggle();">
+            <img src="./assets/user-circle.svg" />
+        </div>
+        <div class="menu">
+            <h3 id="profile_username">Someone Famous</h3>
+            <ul>
+                <li>
+                    <img src="./assets/icons/log-out.png" /><a id="logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="selector">
+        <div class="first" id="f0" onclick="infoToggle(id)"> DC Motor - Voltage vs RPM
+            <div class="in_btn"><button class="enter_exp" onclick="startExp()">Enter Experiment</button></div>
+        </div>
+        <div class="first" id="f1" onclick="infoToggle(id)"> Experiment - 2 </div>
+        <div class="first" id="f2" onclick="infoToggle(id)"> Experiment - 3 </div>
+        <div class="second" id="s0">
+            <p class="in_theory" id="s0text">Experiment related information given here.</p>
+        </div>
+        <div class="first" id="f3" onclick="infoToggle(id)"> Experiment - 4 </div>
+        <div class="first" id="f4" onclick="infoToggle(id)"> Experiment - 5 </div>
+        <div class="first" id="f5" onclick="infoToggle(id)"> Experiment - 6 </div>
+        <div class="second" id="s1">
+            <p class="in_theory" id="s1text">Experiment related information given here.</p>
+        </div>
+    </div>
+
+    <script src="./expControl.js"></script>
+</body>
+
+</html>

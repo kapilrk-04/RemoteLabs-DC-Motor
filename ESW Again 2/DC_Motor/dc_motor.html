@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Remote Labs - DC Motor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+    <link href="./styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="title">REMOTE LABS
+        <div>
+            <button id="theory" onclick="theoryDisplay()">THEORY</button>
+            <button id="instructions" onclick="instDisplay()">INSTRUCTIONS</button>
+        </div>
+    </div>
+    <div class="action">
+        <div class="timerL" align="right">
+            <div class="time1">Session ends in</div>
+            <div class="time2"><label class="timer" id="timerval"></label></div>
+        </div>
+        <div class="leave_div"><button class="leave" onclick="leavePage()">LEAVE</button></div>
+        <div class="profile" onclick="menuToggle();">
+            <img src="./assets/user-circle.svg" />
+        </div>
+        <div class="menu">
+            <h3 id="profile_username">Someone Famous</h3>
+            <ul>
+                <li>
+                    <img src="./assets/icons/log-out.png" /><a id="logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="theory_content" id="t" align="center">
+        <p style="text-align:justify; padding: 2vw;"><b>THEORY</b><br><br>The experiment ‘REMOTE LABS: DC MOTOR’ aims to achieve remote access to a DC motor through the internet, to variate its speed. The DC Motor is connected to an ESP32, which receives data for Input Voltage from the internet
+            and variates the RPM accordingly, by changing the current sent to the DC Motor. The values for RPM and Input Voltage are plotted in a Voltage v/s RPM graph.<br><br><b>INTRODUCTION</b><br><br>&nbsp;&nbsp;From the early 90s, efforts have been
+            made to run the laboratory experiment via the World Wide Web. In 1999, a remote control experiment on an oscilloscope was developed in the VLAB laboratory of National University of Singapore. The MIT ILAB architecture was also another milestone
+            in virtualization of instruments. It provides the deployment, management and sharing of online laboratories that interface with hardware devices. Concept of such remotely accessing laboratories is very crucial for developing countries where
+            limited educational facilities are available.This venture provides any student to conduct practical experiments through the medium of internet.<br>&nbsp;&nbsp;For a student to try out any experiment, he/she should first get himself/herself
+            registered on the website. After registration, they can choose a time slot offered for the experiment. If it is available, then the user is allowed to conduct the experiments during the allocated slot otherwise he/she can get from the server
+            what the user with the slot wants it to do. The experimental setup is also visible during the experiment through the use of a camera which is controlled by the user.</p>
+    </div>
+    <div class="instructions_content" id="i" align="center">
+        <p style="text-align: justify; padding: 2vw;"><b>INSTRUCTIONS</b><br><br>
+            <ol style="padding-left:2vw; text-align:justify">
+                <li>The slider, which you can see on the main page of the experiment, controls the voltage that is sent to the Motor Controller. Move it right to increase Voltage, and left to decrease it.</li>
+                <br>
+                <li>The Motor Controller reads the voltage and sends the appropriate amount of Current from the battery to the DC motor. It uses Ohm’s law V = IR, and R is constant here.</li>
+                <br>
+                <li>The DC motor spins according to the current supplied to it. Higher the current supplied, the higher the RPM.</li>
+                <br>
+                <li>The RPM Sensor reads the RPM and uploads it into Thingspeak. The RPM sensor works on the principle of photoelectric sensing, which reads the distance covered by the number of times the photoelectric light is disturbed.</li>
+                <br>
+                <li>The Voltage vs RPM is updated in the graph, next to the slider. The values are updated only on changing voltage, i.e., we get a data point for a particular voltage and we wait for a new voltage to measure a new data point. The graph is
+                    linear!
+                </li>
+            </ol>
+        </p>
+    </div>
+
+    <div class="selector">
+        <div class="content">
+            <div class="container">
+
+                <div class="range-slider">
+                    <label class="input-labels">Voltage Input :</label>
+                    <span id="voltage" class="rs-label">0</span>
+                    <input id="sliderV" class="rs-range" type="range" value="0" min="0" max="100" onclick="updateVoltage(this.value)" oninput="showSliderValue()">
+
+                </div>
+
+                <div class="box-minmax">
+                    <span>0</span><span>10</span>
+                </div>
+
+                <div class="output-div">
+                    <div class="space-rpm">
+                        <label class="input-labels">RPM of Motor :&nbsp;</label>
+                    </div>
+                    <span id="rpm" class="rpm">0</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="chart-content">
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+        </div>
+        <div id="cam" align="center">
+            <figure>
+                <div>
+                    <div>
+                        <img id="stream" src="http://192.168.43.121:81/stream">
+                    </div>
+                </div>
+            </figure>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="./control.js"></script>
+</body>
+
+</html>
